@@ -1,0 +1,26 @@
+# ============================================================================
+# FOOD-101 CLASSIFICATION - PYTHON DEPENDENCIES
+# ============================================================================
+# Install with: pip install -r requirements.txt
+# ============================================================================
+
+# Core dependencies
+numpy==1.24.3
+Pillow==10.0.0
+
+# Machine Learning & Deep Learning
+tensorflow==2.13.0
+keras==2.13.0
+
+# Web Framework for API
+fastapi==0.100.0
+uvicorn==0.23.2
+python-multipart==0.0.6
+
+# Development & Utilities
+matplotlib==3.7.2
+pydantic==2.0.3
+
+# Optional for better performance
+# scikit-image==0.21.0
+# scikit-learn==1.3.0

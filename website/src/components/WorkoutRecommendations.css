@@ -1,0 +1,158 @@
+.recommendations-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recommendations-header {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+.recommendations-header h3 {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.recommendations-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.no-recommendations {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.no-recommendations p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.no-recommendations p:first-child {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.recommendation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.recommendation-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.rec-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.rec-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.rec-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.rec-description {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.rec-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meta-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.meta-badge.difficulty {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.rec-action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.btn-sm {
+  padding: 8px 12px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: auto;
+  white-space: nowrap;
+}
+
+.recommendations-footer {
+  background: #f0f8ff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #30cfd0;
+}
+
+.recommendation-tip {
+  margin: 0;
+  font-size: 13px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .recommendation-item {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rec-action {
+    width: 100%;
+  }
+
+  .btn-sm {
+    width: 100%;
+    justify-content: center;
+  }
+}
