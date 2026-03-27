@@ -1,22 +1,24 @@
 .reminder-card {
   width: min(980px, calc(100% - 28px));
   margin: 0 auto 24px;
-  border: 1px solid #dbe6f0;
-  border-radius: 20px;
-  background: #ffffff;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
-  padding: 22px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
 }
 
 .reminder-header h3 {
-  font-size: 1.35rem;
-  color: #0f172a;
+  font-size: 20px;
+  color: var(--ink);
   margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .reminder-header p {
-  color: #475569;
+  color: var(--muted);
   margin-bottom: 16px;
+  font-size: 14px;
 }
 
 .reminder-status-row {
@@ -27,8 +29,8 @@
   flex-wrap: wrap;
   margin-bottom: 16px;
   padding: 12px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: var(--surface-soft);
+  border: 1px solid var(--border-light);
   border-radius: 12px;
 }
 
@@ -40,43 +42,53 @@
 
 .toggle-row,
 .field-row {
-  border: 1px solid #dbe6f0;
-  border-radius: 12px;
-  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
   padding: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.toggle-row:hover,
+.field-row:hover {
+  border-color: var(--brand);
+  background: var(--brand-light);
 }
 
 .toggle-row input[type='checkbox'] {
   width: 18px;
   height: 18px;
-  accent-color: #0f766e;
+  cursor: pointer;
+  accent-color: var(--brand);
 }
 
 .field-row span,
 .toggle-row span {
-  color: #1e293b;
+  color: var(--ink);
   font-weight: 600;
+  font-size: 14px;
 }
 
 .field-row input {
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
   padding: 8px 10px;
   min-width: 110px;
+  transition: all 0.2s ease;
 }
 
 .field-row input:focus {
   outline: none;
-  border-color: #0f766e;
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
 .reminder-actions {
-  margin-top: 14px;
+  margin-top: 16px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -86,7 +98,7 @@
   .reminder-card {
     width: auto;
     margin: 0 12px 18px;
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 16px;
   }
 
@@ -97,5 +109,56 @@
   .field-row,
   .toggle-row {
     flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .reminder-card {
+    width: auto;
+    margin: 0 8px 12px;
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .reminder-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .reminder-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .field-row,
+  .toggle-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field-row label,
+  .toggle-row label {
+    font-size: 12px;
+  }
+
+  .field-row input,
+  .field-row select {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .toggle-row input {
+    width: 40px;
+    height: 20px;
+  }
+
+  .smart-reminders-footer {
+    gap: 8px;
+  }
+
+  .smart-reminders-footer button {
+    padding: 10px 12px;
+    font-size: 12px;
+    flex: 1;
   }
 }

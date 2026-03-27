@@ -1,39 +1,41 @@
 .stats-tracker {
-  background: white;
+  background: var(--surface);
   border-radius: 12px;
-  padding: 24px;
+  padding: 28px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
 }
 
 .stats-loading {
   text-align: center;
   padding: 40px 20px;
-  color: #666;
+  color: var(--muted);
 }
 
 .stats-header {
   margin-bottom: 24px;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 1px solid var(--border-light);
   padding-bottom: 16px;
 }
 
 .stats-header h3 {
   margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .streak-section {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 8px;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--secondary) 100%);
+  border-radius: 12px;
   margin-bottom: 24px;
   color: white;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
 }
 
 .streak-indicator {
@@ -83,15 +85,17 @@
 
 .streak-number {
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
 }
 
 .streak-label {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   margin-top: 4px;
   opacity: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .streak-message {
@@ -101,7 +105,7 @@
 .message-text {
   margin: 0 0 4px 0;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .message-detail {
@@ -113,8 +117,8 @@
 .achievement-progress {
   margin-bottom: 24px;
   padding: 16px;
-  background: #f0f0f0;
-  border-radius: 8px;
+  background: var(--surface-soft);
+  border-radius: 12px;
 }
 
 .progress-header {
@@ -125,15 +129,20 @@
 }
 
 .progress-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .progress-count {
   font-size: 13px;
-  color: #667eea;
-  font-weight: 600;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
 }
 
 .progress-bar-container {
@@ -142,14 +151,14 @@
 
 .progress-bar {
   height: 6px;
-  background: #ddd;
+  background: var(--border);
   border-radius: 3px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, var(--brand) 0%, var(--secondary) 100%);
   border-radius: 3px;
   transition: width 0.5s ease;
 }
@@ -157,7 +166,7 @@
 .progress-text {
   margin-top: 4px;
   font-size: 12px;
-  color: #666;
+  color: var(--muted);
   text-align: right;
 }
 
@@ -305,5 +314,56 @@
 
   .achievement-grid {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-tracker {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .stats-tracker h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-box {
+    padding: 12px;
+  }
+
+  .stat-box h3 {
+    font-size: 12px;
+  }
+
+  .stat-box p {
+    font-size: 18px;
+  }
+
+  .streak-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .streak-label {
+    font-size: 11px;
+  }
+
+  .achievement-grid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 8px;
+  }
+
+  .achievement-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    font-size: 24px;
   }
 }

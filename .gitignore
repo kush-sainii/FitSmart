@@ -1,2 +1,6 @@
 venv 
 .env
+capstone
+__pycache__
+.venv
+node_modules

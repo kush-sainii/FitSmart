@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
+import Dashboard from './pages/Dashboard'
 import ExercisePlanner from './pages/ExercisePlanner'
+import ProgressPage from './pages/ProgressPage'
+import RemindersPage from './pages/RemindersPage'
+import ProfilePage from './pages/ProfilePage'
+import FoodTrackerPage from './pages/FoodTrackerPage'
 import Navbar from './components/Navbar'
 import BotChat from './components/BotChat'
 import './styles/globals.css'
@@ -20,7 +25,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/exercises" element={<ExercisePlanner />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/workouts" element={<ExercisePlanner />} />
+          <Route path="/progress" element={<ProgressPage />} />
+          <Route path="/reminders" element={<RemindersPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/food" element={<FoodTrackerPage />} />
         </Routes>
         
         {/* Floating Bot Chat Button */}

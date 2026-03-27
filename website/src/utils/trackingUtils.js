@@ -3,45 +3,49 @@
  */
 
 const STORAGE_KEYS = {
-  USER_PROFILE: 'fitUserProfile',
+  USER_EMAIL: 'fitUserEmail',
   WORKOUT_HISTORY: 'fitWorkoutHistory',
   NUTRITION_LOG: 'fitNutritionLog',
   ACHIEVEMENTS: 'fitAchievements'
 }
 
 // ============================================================================
-// USER PROFILE MANAGEMENT
+// USER EMAIL MANAGEMENT
+// ============================================================================
+
+export function loadUserEmail() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEYS.USER_EMAIL)
+    return saved || ''
+  } catch {
+    return ''
+  }
+}
+
+export function saveUserEmail(email) {
+  localStorage.setItem(STORAGE_KEYS.USER_EMAIL, email)
+}
+
+// ============================================================================
+// DEPRECATED - Keeping for backward compatibility
 // ============================================================================
 
 export function loadUserProfile() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEYS.USER_PROFILE)
-    if (!saved) return getDefaultProfile()
-    return JSON.parse(saved)
-  } catch {
-    return getDefaultProfile()
-  }
-}
-
-export function getDefaultProfile() {
-  return {
-    name: '',
-    age: 0,
-    weight: 0,
-    height: 0,
-    fitnessGoal: 'balanced', // weight-loss, muscle-building, flexibility, balanced
-    difficultyLevel: 'Beginner', // Beginner, Intermediate, Advanced
-    availableTimePerWeek: 3, // hours per week
-    preferredExerciseTime: 'morning' // morning, evening, flexible
-  }
+  return { email: loadUserEmail() }
 }
 
 export function saveUserProfile(profile) {
-  localStorage.setItem(STORAGE_KEYS.USER_PROFILE, JSON.stringify(profile))
+  if (profile.email) {
+    saveUserEmail(profile.email)
+  }
 }
 
 export function isProfileComplete(profile) {
-  return profile.name && profile.age && profile.weight && profile.height
+  return profile && profile.email && profile.email.includes('@')
+}
+
+export function getDefaultProfile() {
+  return { email: '' }
 }
 
 // ============================================================================

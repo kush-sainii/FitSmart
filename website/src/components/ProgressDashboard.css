@@ -1,39 +1,40 @@
 .progress-dashboard {
-  background: white;
+  background: var(--surface);
   border-radius: 12px;
-  padding: 24px;
+  padding: 28px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
 }
 
 .progress-loading {
   text-align: center;
   padding: 40px 20px;
-  color: #666;
+  color: var(--muted);
 }
 
 .dashboard-header {
   margin-bottom: 24px;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 1px solid var(--border-light);
   padding-bottom: 16px;
 }
 
 .dashboard-header h3 {
-  margin: 0 0 4px 0;
-  font-size: 22px;
-  font-weight: 600;
-  color: #1a1a1a;
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .dashboard-header p {
   margin: 0;
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: var(--muted);
 }
 
 .progress-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -45,21 +46,22 @@
 }
 
 .progress-card {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 8px;
-  padding: 16px;
+  background: linear-gradient(135deg, var(--brand-light) 0%, var(--secondary-light) 100%);
+  border-radius: 10px;
+  padding: 20px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-light);
 }
 
 .progress-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .progress-card:nth-child(1) {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--secondary) 100%);
   color: white;
 }
 
@@ -173,4 +175,73 @@
   font-size: 14px;
   color: #1a1a1a;
   font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .progress-dashboard {
+    padding: 12px;
+  }
+
+  .progress-dashboard h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .progress-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .progress-card {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .card-icon {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .card-label {
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+
+  .card-value {
+    font-size: 22px;
+  }
+
+  .card-meta {
+    font-size: 10px;
+  }
+
+  .progress-bar {
+    height: 3px;
+  }
+
+  .progress-text {
+    font-size: 10px;
+  }
+
+  .nutrition-macros {
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .nutrition-macros span {
+    padding: 2px 6px;
+  }
+
+  .last-workout {
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .last-workout-label {
+    font-size: 11px;
+  }
+
+  .last-workout-time {
+    font-size: 12px;
+  }
 }
