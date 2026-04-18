@@ -1,0 +1,91 @@
+# Git ignore file for Food-101 Classification project
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Dataset (too large)
+dataset/
+food-101/
+*.tar.gz
+*.tar
+
+# Model files (generated during training)
+model/*.h5
+model/*.keras
+model/*.tflite
+model/*.pb
+model/*.json
+model/*.png
+model/*.pkl
+
+# Training outputs
+*.log
+logs/
+runs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+Thumbs.db
+.DS_Store
+*.exe
+
+# Temporary
+*.tmp
+*.temp
+*.bak
+test_image.*
+*.jpg
+*.jpeg
+*.png
+
+# Application cache
+.cache/
+*.cache
+
+# Test outputs
+test_results/
+predictions/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
